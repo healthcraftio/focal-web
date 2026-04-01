@@ -39,7 +39,7 @@
       --fs-step-num: 56px;
 
       /* Spacing */
-      --space-section: 140px;
+      --space-section: 115px;
       --space-page: 48px;
 
       /* Layout */
@@ -286,17 +286,18 @@
       max-width: var(--max-w-narrow); margin: 0 auto; position: relative; z-index: 1;
     }
 
-    .included-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-      margin-top: 40px;
+    .included-list {
+      margin-top: 40px; list-style: none;
     }
-    .included-grid li {
-      padding: 24px 0; border-bottom: 1px solid rgba(18,18,16,0.1);
+    .included-list li {
+      padding: 18px 0; border-bottom: 1px solid rgba(18,18,16,0.1);
       font-size: var(--fs-body); font-weight: 300; color: var(--text-mid); line-height: 1.6;
-      list-style: none;
+      display: flex; align-items: baseline; gap: 14px;
     }
-    .included-grid li:nth-child(odd) { padding-right: 32px; }
-    .included-grid li:nth-child(even) { padding-left: 32px; border-left: 1px solid rgba(18,18,16,0.1); }
+    .included-list li:first-child { border-top: 1px solid rgba(18,18,16,0.1); }
+    .included-list li::before {
+      content: "\2713"; font-size: 18px; color: var(--text); flex-shrink: 0;
+    }
 
     .pricing-line {
       margin-top: 32px;
@@ -358,9 +359,6 @@
       .glyph { display: none; }
       .step { gap: 24px; }
       .step-num { width: 40px; }
-      .included-grid { grid-template-columns: 1fr; }
-      .included-grid li:nth-child(even) { padding-left: 0; border-left: none; }
-      .included-grid li:nth-child(odd) { padding-right: 0; }
       .final-cta { padding: 120px var(--space-page); }
       .burst { display: none; }
     }
@@ -407,7 +405,7 @@
     <div class="nav-links">
       <a href="#how">Process</a>
       <a href="#pricing">Pricing</a>
-      <a href="#book" class="nav-cta">Book a call</a>
+      <a href="https://calendar.app.google/MP5biH2wiGyZADMc9" target="_blank" class="nav-cta">Book a call</a>
     </div>
   </nav>
 
@@ -460,8 +458,8 @@
       </h1>
       <p class="hero-sub">The best people aren't applying anywhere. Focal AI finds them, vets the fit, and gets them interested before you ever pick up the phone.</p>
       <div class="hero-cta-wrap">
-        <a href="#book" class="cta-btn">Book a call</a>
-        <span class="note" style="display:block;margin-top:20px;">Not an agency. Priced like a job board.</span>
+        <a href="https://calendar.app.google/MP5biH2wiGyZADMc9" target="_blank" class="cta-btn">Book a call</a>
+        <span class="note" style="display:block;margin-top:20px;font-style:italic;color:var(--text-faint);">Not an agency. Priced like a job board at $499 per role.</span>
       </div>
     </div>
   </section>
@@ -482,7 +480,7 @@
     <div class="section-label animate-in">The approach</div>
     <h2 class="animate-in delay-1">We go find them. Not wait for them.</h2>
     <p class="animate-in delay-2">Focal AI searches LinkedIn, GitHub, and professional networks to find people who match your role. It researches their background, crafts a personal message, and starts the conversation on your behalf.</p>
-    <p class="animate-in delay-3">No spray-and-pray. No middlemen. Just the right people, brought to you.</p>
+    <p class="animate-in delay-3">Every shortlist is reviewed by a person before it reaches you. No spray-and-pray. No middlemen. Just the right people, brought to you.</p>
   </div>
 
   <!-- Built For -->
@@ -512,14 +510,14 @@
         <div class="step-num">2</div>
         <div>
           <h3>We search, reach out, and vet</h3>
-          <p>We comb LinkedIn, GitHub, and professional networks. Each candidate gets a personalized message &mdash; written for them, not copied and pasted. Because generic outreach gets ignored.</p>
+          <p>We comb LinkedIn, GitHub, and professional networks. Each candidate gets a personalized message &mdash; written for them, not copied and pasted. Then we screen for interest, availability, and baseline fit with role-specific questions before anyone reaches your inbox.</p>
         </div>
       </div>
       <div class="step animate-in">
         <div class="step-num">3</div>
         <div>
           <h3>Open your inbox</h3>
-          <p>15&ndash;20 vetted candidates. Ready for your calendar. Most roles fully sourced within 4 weeks.</p>
+          <p>10&ndash;20 vetted candidates. Ready for your calendar. Most roles fully sourced within 4 weeks.</p>
         </div>
       </div>
     </div>
@@ -532,19 +530,16 @@
     <div class="included-inner">
       <div class="section-label animate-in" style="color:var(--text-muted);">What you get</div>
       <h2 class="animate-in delay-1" style="font-family:var(--serif);font-weight:400;font-style:italic;font-size:var(--fs-h2);line-height:1.2;color:var(--text);margin-bottom:40px;max-width:600px;">One flat fee. Everything below.</h2>
-      <ul class="included-grid">
-        <li class="animate-in delay-1">15&ndash;20 vetted candidates delivered over email</li>
-        <li class="animate-in delay-2">Candidate interest confirmed before delivery</li>
-        <li class="animate-in delay-1">4-week sourcing sprint</li>
-        <li class="animate-in delay-2">Dedicated Focal AI agent on your role</li>
-        <li class="animate-in delay-3">Intake calibration with sample profiles</li>
-        <li class="animate-in delay-4">Personalized outreach to every candidate</li>
-        <li class="animate-in delay-3">Screening questions tailored to the position</li>
-        <li class="animate-in delay-4">Full refund if we can't deliver</li>
+      <ul class="included-list">
+        <li class="animate-in delay-1">Delivery of 10&ndash;20 candidates, screened for role fit</li>
+        <li class="animate-in delay-2">30 days of focused sourcing effort on your role</li>
+        <li class="animate-in delay-3">First candidates delivered within 4 days</li>
+        <li class="animate-in delay-4">Every shortlist reviewed by a human before delivery</li>
+        <li class="animate-in delay-4">Money back if we can't deliver</li>
       </ul>
       <div class="pricing-line animate-in">
         <div class="price">$499 per role</div>
-        <div class="price-detail">Flat fee. No strings. What agencies charge $25K for.</div>
+        <div class="price-detail">Flat fee. No strings. What agencies charge $25K for.<br>Hiring for multiple roles? Run them in parallel &mdash; same flat fee per role.</div>
       </div>
     </div>
   </div>
@@ -555,7 +550,7 @@
 
     <h2 class="animate-in">The people you want aren't applying.<br>We go get them.</h2>
     <div class="animate-in delay-2">
-      <a href="#book" class="cta-btn">Let's talk hiring</a>
+      <a href="https://calendar.app.google/MP5biH2wiGyZADMc9" target="_blank" class="cta-btn">Book a call</a>
       <span class="note">No commitment. We'll tell you upfront if we can help.</span>
     </div>
   </div>
@@ -566,7 +561,6 @@
       <svg width="16" height="16" viewBox="0 0 300 300" style="border-radius:50%;overflow:hidden;"><use href="#burst-shape" stroke="#938F86" fill="#938F86"/></svg>
       Focal
     </a>
-    <a href="mailto:hire@focaltalent.work">hire@focaltalent.work</a>
   </footer>
 
   <!-- Scroll animations -->
